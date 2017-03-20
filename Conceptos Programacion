@@ -1,0 +1,28 @@
+
+
+Si (if) simple
+nos permite evaluar una condición para determinar si es falsa o verdadera.
+
+Si (if) anidada
+Función SI dentro de otra, probando una condición adicional. Amplia el numero de resultados posibles
+
+
+Contador
+Variable cuyo valor se incrementa/decrementa en una cantidad constante(valor fijo) cada vez que se produce una acción. (Se podría decir que es un tipo de “acumulador”)
+
+Generalmente están fuera de la estructura bucle
+
+-Ejemplo:  Cada vez que un enfermo es atendido en un hospital, se almacena en un contador los enfermos atendidos.
+ 
+
+Acumulador
+Parecido a “contador”, valores se incrementan no constantemente.
+
+
+Mientras (bucle while)
+Función(bucle) que nos permite ejecutar de forma repetida mientras se cumpla una condición
+
+Bucle
+Funcion utilizada para hacer una accion repetida sin tener que escribir varias veces el mismo código. Ahorra tiempo y optimiza el programa. 3 tipos mas utilizados: while, for y repetir.
+
+
