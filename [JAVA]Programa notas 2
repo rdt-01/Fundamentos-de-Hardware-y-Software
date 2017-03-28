@@ -1,0 +1,37 @@
+package calificacion;
+
+import java.util.Scanner;
+
+public class NewMain {
+   
+    public static void main(String[] args) 
+    {
+         float nota; /* float es para decimales*/
+         int intentos=0;
+ 
+        do{
+         
+        Scanner teclado=new Scanner(System.in); /*teclado es de tipo scanner*/
+        System.out.println("Ingrese nota:");
+        nota=teclado.nextFloat();
+        intentos++;
+        System.out.println("Ha intentado "+intentos+" veces");
+        
+        }while ((nota<1) || (nota>7));
+        
+            
+           if(nota>=1.0 && nota<=3.9)
+               System.out.println("Nota insuficiente");
+        
+           if(nota>=4.0 && nota>=4.9)
+               System.out.println("Nota suficiente");
+        
+           if(nota>=5.0 && nota>=5.9)
+               System.out.println("Buena nota");
+        
+           if(nota>=6.0 && nota<=7.0)
+               System.out.println("Muy buena nota");  
+        
+        } 
+    }
+}
