@@ -1,0 +1,49 @@
+package calificacion;
+
+import java.util.Scanner;
+
+public class NewMain {
+   
+    public static void main(String[] args) 
+    {
+         float nota; /* float es para decimales*/
+         int intentos=0;/*variable asignada para contador*/
+ 
+        do{ /*hacer esto*/
+         
+        Scanner teclado=new Scanner(System.in); /*teclado es de tipo scanner*/
+        System.out.println("Ingrese nota:");
+        nota=teclado.nextFloat(); /*funcion para ingresar valor, se almacena en
+        variable "nota"*/
+        intentos++; /*variable para contador esta siendo sumada*/
+        System.out.println("Ha intentado "+intentos+" veces");
+        
+        
+        /*Se agrega condicion, si la nota ingresada es valida o no*/
+            {
+            if ((nota>7.0) || (nota<1.0))
+                System.out.println("La nota no es válida");
+            
+            if((nota>1.0) && (nota<7.0))
+                System.out.println("La nota es válida");
+            }
+            
+        /*mientas ocurra esto*/    
+        }while ((nota<1) || (nota>7));
+        
+            /*si la nota es valida, se sale del bucle*/
+           if(nota>=1.0 && nota<=3.9)
+               System.out.println("Nota insuficiente");
+        
+           if(nota>=4.0 && nota>=4.9)
+               System.out.println("Nota suficiente");
+        
+           if(nota>=5.0 && nota>=5.9)
+               System.out.println("Buena nota");
+        
+           if(nota>=6.0 && nota<=7.0)
+               System.out.println("Muy buena nota");  
+        
+        } 
+ }
+    
