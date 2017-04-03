@@ -1,0 +1,49 @@
+package javaapplication6;
+
+import java.util.Scanner;
+
+public class JavaApplication6
+{        
+    public static void main(String[] args) 
+    {
+        /*--------------------------------------*/
+        
+        //inicializamos un numer maximo "neutro"
+        int max= 0;
+        int min= 0;
+        int num;
+        int cant;
+        
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("Ingrese la cantidad de numeros a ingresar");
+        //Se almacena la cantidad de numeros para usar en "for"
+        cant = entrada.nextInt();
+        
+        for (int i = 0; i < cant; i++)
+        {
+           System.out.println("Ingrese valor:");
+           //Se guarda numero a comparar
+           num = entrada.nextInt();
+           
+           if (i == 0){ //doble = significa que compara
+               //Se reemplaza el mayor si es que es verdadero
+               //Primer numero se ingresa a max y a min
+               max = num;
+               min = num;
+           }
+           //comparamos si el valor ingresado es mayor al maximo
+           if (num > max) {
+               //Se reemplaza el mayor si resulta verdadero
+               max = num;
+           }
+           if (num < min) {
+               min = num;
+           }
+           
+        //Se muestra el resultado
+        System.out.println("El número mayor es: " +max);
+        System.out.println("El numero menor es: " +min);
+        }
+    }     
+}
