@@ -4,11 +4,11 @@ Proceso sin_titulo
 	
 	Repetir
 		
-		Escribir "Ingrese primer número";
+		Escribir "Ingrese primer n≈ìmero";
 		Leer A;
-		Escribir "Ingrese segundo número";
+		Escribir "Ingrese segundo n≈ìmero";
 		Leer B;
-		Escribir "Ingrese tercer número";
+		Escribir "Ingrese tercer n≈ìmero";
 		Leer C;
 		
 		suma <- A + B + C;
@@ -17,7 +17,7 @@ Proceso sin_titulo
 		si suma=6 y multiplicacion=6 entonces
 			escribir "CORRECTO";
 		Sino
-			escribir "INCORRECTO, Inténtalo nuevamente";
+			escribir "INCORRECTO, Int≈Ωntalo nuevamente";
 		FinSi
 		
 	Hasta Que suma=6 y multiplicacion=6;
