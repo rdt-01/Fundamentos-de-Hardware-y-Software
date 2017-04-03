@@ -1,0 +1,105 @@
+Proceso sin_titulo
+	
+// ENTRADA
+	
+	A<-20000;
+	B<-10000;
+	C<-5000;
+	D<-2000;
+	E<-1000;
+	F<-500;
+	G<-100;
+	H<-50;
+	I<-10;
+	J<-5;
+	K<-1;
+	
+	Escribir "Ingrese monto a retirar";
+	Leer monto;
+	
+	
+// PROCESO
+	
+	
+	//Billetes de 20000
+	restoA<- monto mod A;
+	difA<- monto-restoA;
+	divA<- difA/A;
+	monto2<- monto-divA*A;
+	
+	
+	//Billetes de 10000
+	restoB<- monto2 mod B;
+	difB<- monto2-restoB;
+	divB<- difB/B;
+	monto3<- monto2-divB*B;
+	
+	//Billetes de 5000
+	restoC<- monto3 mod C;
+	difC<- monto3-restoC;
+	divC<- difC/C;
+	monto4<- monto3-divC*C;
+	
+	//Billetes de 2000
+	restoD<- monto4 mod D;
+	difD<- monto4-restoD;
+	divD<- difD/D;
+	monto5<- monto4-divD*D;
+	
+	//Billetes de 1000
+	restoE<- monto5 mod E;
+	difE<- monto5-restoE;
+	divE<- difE/E;
+	monto6<- monto5-divE*E;
+	
+	//Monedas de 500
+	restoF<- monto6 mod F;
+	difF<- monto6-restoF;
+	divF<- difF/F;
+	monto7<- monto6-divF*F;
+	
+	//Monedas de 100
+	restoG<- monto7 mod G;
+	difG<- monto7-restoG;
+	divG<- difG/G;
+	monto8<- monto7-divG*G;
+	
+	//Monedas de 50
+	restoH<- monto8 mod H;
+	difH<- monto8-restoH;
+	divH<- difH/H;
+	monto9<- monto8-divH*H;
+	
+	//Monedas de 10
+	restoI<- monto9 mod I;
+	difI<- monto9-restoI;
+	divI<- difI/I;
+	monto10<- monto9-divI*I;
+	
+	//Monedas de 5
+	restoJ<- monto10 mod J;
+	difJ<- monto10-restoJ;
+	divJ<- difJ/J;
+	monto11<- monto10-divJ*J;
+	
+	//Monedas de 1
+	restoK<- monto11 mod K;
+	difK<- monto11-restoK;
+	divK<- difK/K;
+	
+	
+	
+// SALIDA
+	Escribir divA," billetes de ",A;
+	Escribir divB," billetes de ",B;
+	Escribir divC," billetes de ",C;
+	Escribir divD," billetes de ",D;
+	Escribir divE," billetes de ",E;
+	Escribir divF," monedas de ",F;
+	Escribir divG," monedas de ",G;
+	Escribir divH," monedas de ",H;
+	Escribir divI," monedas de ",I;
+	Escribir divJ," monedas de ",J;
+	Escribir divK," monedas de ",K;
+	
+FinProceso
