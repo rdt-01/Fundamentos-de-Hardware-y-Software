@@ -6,6 +6,7 @@
 package remuneraciones;
 
 import java.util.Scanner;
+
 /**
  *
  * @author rdt
@@ -22,102 +23,124 @@ public class Remuneraciones {
         int canthoras_ex;
         int horas_ex;
         int grado;
-        int sueldo_base=0;
-        int sueldo_bas=0;
+        int sueldo_base = 0;
+        int sueldo_bas = 0;
         int afp;
         double sueldo_afp;
         int isapre;
         double sueldo_isapre;
-        
-        do {
-        System.out.println("Ingrese el grado del trabajador");
-        System.out.println("1: $450.000 - 2: $550.000 - 3: $700.000");
-        //nextInt: recibe un valor entero ingresado por el usuario
-        grado = entrada.nextInt();
-        
-        switch(grado){
-            case 1: 
-                sueldo_base = 450000;
-                break;
-            case 2: 
-                sueldo_base = 550000;
-                break;
-            case 3:
-                sueldo_base = 700000;
-                break;
-        }    
-        
-        } while((grado < 1) || (grado > 3));
-        
-        System.out.println("Ingrese horas extras trabajadas:");
-        canthoras_ex = entrada.nextInt();
-        
-        if (canthoras_ex > 0 && canthoras_ex < 4){
-            horas_ex = canthoras_ex*2000;
-            sueldo_bas = horas_ex+sueldo_base;
-        }
-        if (canthoras_ex > 3 && canthoras_ex < 8){
-            horas_ex = canthoras_ex*3000;
-            sueldo_bas = horas_ex+sueldo_base;
-        }
-        if (canthoras_ex > 7){
-            horas_ex = canthoras_ex*3500;
-            sueldo_bas = horas_ex+sueldo_base;
-        }
-            
+        //-----------------
+        int num_tra;
+        int cont = 0;
+        int cont_grad = 0;
+        int cont_ex = 0;
+        int sueldo_acumulado;
+
+        System.out.println("Ingrese cantidad de trabajadores:");
+        num_tra = entrada.nextInt();
+
+        while (cont < num_tra) {
+
+            while (cont_grad < num_tra) {
+                do {
+                    System.out.println("Ingrese el grado del trabajador");
+                    System.out.println("1: $450.000 - 2: $550.000 - 3: $700.000");
+                    //nextInt: recibe un valor entero ingresado por el usuario
+                    grado = entrada.nextInt();
+
+                    switch (grado) {
+                        case 1:
+                            sueldo_base = 450000;
+                            break;
+                        case 2:
+                            sueldo_base = 550000;
+                            break;
+                        case 3:
+                            sueldo_base = 700000;
+                            break;
+                    }
+
+                } while ((grado < 1) || (grado > 3));
+
+                cont_grad++;
+
+            }
+            while (cont_ex < num_tra) {
+
+                System.out.println("Ingrese horas extras trabajadas:");
+                canthoras_ex = entrada.nextInt();
+
+                if (canthoras_ex > 0 && canthoras_ex < 4) {
+                    horas_ex = canthoras_ex * 2000;
+                    sueldo_bas = horas_ex + sueldo_base;
+                }
+                if (canthoras_ex > 3 && canthoras_ex < 8) {
+                    horas_ex = canthoras_ex * 3000;
+                    sueldo_bas = horas_ex + sueldo_base;
+                }
+                if (canthoras_ex > 7) {
+                    horas_ex = canthoras_ex * 3500;
+                    sueldo_bas = horas_ex + sueldo_base;
+                }
+                cont_ex++;
+            }
+
             do {
                 System.out.println("Ingrese ISAPRE del trabajador");
                 System.out.println("1: Colmena - 2: Ban Médica - 3: Vida 3 "
                         + " - 4: Fonasa");
                 isapre = entrada.nextInt();
 
-                    switch(isapre){
-                        case 1:
-                            sueldo_isapre = sueldo_bas*0.065;
-                            sueldo_bas = sueldo_bas - (int)(sueldo_isapre);
-                            break;
-                        case 2:
-                            sueldo_isapre = sueldo_bas*0.073;
-                            sueldo_bas = sueldo_bas - (int)(sueldo_isapre);
-                            break;
-                        case 3:
-                            sueldo_isapre = sueldo_bas*0.07;
-                            sueldo_bas = sueldo_bas - (int)(sueldo_isapre);
-                            break;
-                        case 4:
-                            sueldo_isapre = sueldo_bas*0.07;
-                            sueldo_bas = sueldo_bas - (int)(sueldo_isapre);
-                            break;
+                switch (isapre) {
+                    case 1:
+                        sueldo_isapre = sueldo_bas * 0.065;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_isapre);
+                        break;
+                    case 2:
+                        sueldo_isapre = sueldo_bas * 0.073;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_isapre);
+                        break;
+                    case 3:
+                        sueldo_isapre = sueldo_bas * 0.07;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_isapre);
+                        break;
+                    case 4:
+                        sueldo_isapre = sueldo_bas * 0.07;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_isapre);
+                        break;
                 }
-            
-            } while((isapre < 1) || (isapre > 4));
-            
+
+            } while ((isapre < 1) || (isapre > 4));
+
             do {
                 System.out.println("Ingrese AFP del trabajador");
                 System.out.println("1: BanSander - 2: Geometrica SA - 3: Cumprum - 4: Provida");
                 afp = entrada.nextInt();
-                
-                switch(afp){
+
+                switch (afp) {
                     case 1:
-                        sueldo_afp = sueldo_bas*0.12;
-                        sueldo_bas = sueldo_bas - (int)(sueldo_afp);
+                        sueldo_afp = sueldo_bas * 0.12;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_afp);
                         break;
                     case 2:
-                        sueldo_afp = sueldo_bas*0.134;
-                        sueldo_bas = sueldo_bas - (int)(sueldo_afp);
+                        sueldo_afp = sueldo_bas * 0.134;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_afp);
                         break;
                     case 3:
-                        sueldo_afp = sueldo_bas*0.123;
-                        sueldo_bas = sueldo_bas - (int)(sueldo_afp);
-                        break;    
+                        sueldo_afp = sueldo_bas * 0.123;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_afp);
+                        break;
                     case 4:
-                        sueldo_afp = sueldo_bas*0.129;
-                        sueldo_bas = sueldo_bas - (int)(sueldo_afp);
-                        break;  
+                        sueldo_afp = sueldo_bas * 0.129;
+                        sueldo_bas = sueldo_bas - (int) (sueldo_afp);
+                        break;
                 }
-            } while((afp < 1) || (afp > 4));
-            
-             System.out.print("El sueldo del trabajador es: ");
-             System.out.println("$" + sueldo_bas);
-    }   
+            } while ((afp < 1) || (afp > 4));
+
+            System.out.print("El sueldo del trabajador es: ");
+            System.out.println("$" + sueldo_bas);
+            System.out.println(" ");
+            cont++;
+        }
+    }
 }
