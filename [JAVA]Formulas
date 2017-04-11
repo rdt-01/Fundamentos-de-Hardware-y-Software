@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package taller;
+
+import java.util.Scanner;
+
+public class Taller {
+
+    public static void main(String[] args) {
+
+        //Variables
+        Scanner entrada = new Scanner(System.in);
+        int num;
+        int func;
+        double result;
+
+        //Entrada de número
+        System.out.println("Ingrese un número:");
+        num = entrada.nextInt();
+
+        //Entrada de función
+        do {
+            System.out.println("Seleccione función:");
+            System.out.println("1. Cuadrado de x \n2. Cubo de x \n3. Área de círculo"
+                    + " con radio x \n4. Perímetro de círculo de radio x \n5. "
+                    + "Factorial de x \n6. Determinar si es numero primo");
+            func = entrada.nextInt();
+
+            if ((func < 1) || (func > 6)) {
+                System.out.println("\nFunción no válida, reingrese porfavor\n ");
+            }
+
+        } while ((func < 1) || (func > 6));
+        
+        //Proceso
+        switch (func) {
+            case 1:
+                result = Math.pow(num, 2);
+                System.out.println("El cuadrado de "+num+" es "+(int)(result));
+                break;
+
+            case 2:
+                result = Math.pow(num, 3);
+                System.out.println("El cubo de "+num+" es "+(int)(result));
+                break;
+
+            case 3:
+                result = Math.PI * Math.pow(num, 2);
+                System.out.println("El área de círculo con radio "+num+" es "+result);
+                break;
+            
+            case 4:
+                result = 2 * Math.PI * num;
+                System.out.println("El perímetro de círculo de radio "+num+" es "+result);
+                break;
+                
+            case 5:
+                System.out.println("");
+                
+            case 6:
+                
+                System.out.println("");
+                break;
+        }
+        //Salida depende de cada caso
+    }
+
+}
